@@ -10,12 +10,12 @@ execute "apt-get update" do
   command "apt-get update"
 end
 
-apt_repository node["chef-php-ppa"]["ppa"]["repository"] do
-  uri node["chef-php-ppa"]["ppa"]["uri"]
+apt_repository node["chef-php-ppa"]["repository"] do
+  uri node["chef-php-ppa"]["uri"]
   distribution node["lsb"]["codename"]
   components ["main"]
   keyserver node["chef-php-ppa"]["keyserver"]
-  key node["chef-php-ppa"]["ppa"]["key"]
+  key node["chef-php-ppa"]["key"]
   action :add
   notifies :run, "execute[apt-get update]", :immediately
 end
