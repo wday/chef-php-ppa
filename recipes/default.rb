@@ -10,7 +10,7 @@ execute "apt-get update" do
   command "apt-get update"
 end
 
-apt_repository "#{["chef-php-ppa"]["ppa"]["repository"]}#{node["lsb"]["codename"]}" do
+apt_repository "#{node["chef-php-ppa"]["ppa"]["repository"]}#{node["lsb"]["codename"]}" do
   uri node["chef-php-ppa"]["ppa"]["uri"]
   distribution node["lsb"]["codename"]
   components ["main"]
