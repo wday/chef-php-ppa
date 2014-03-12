@@ -2,4 +2,6 @@ site :opscode
 
 metadata
 
-cookbook 'apt', :github => 'opscode-cookbooks/apt'
+group :integration do
+  cookbook 'apt', '~> 2.0'
+end
