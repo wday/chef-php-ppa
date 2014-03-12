@@ -1,4 +1,6 @@
 # chef-php-ppa
+[![Build Status](https://secure.travis-ci.org/oakensoul/chef-php-ppa.png)](http://travis-ci.org/oakensoul/chef-php-ppa)
+
 Chef Cookbook for adding an Ubuntu PPA ([Personal Package Archive](https://launchpad.net/ubuntu/+ppas)). This cookbook is built specifically for hooking into ondrej-php, but could likley be cloned for other purposes or other PPAs.
 
 This cookbook is specifically for usage with Vagrant in developing the Cornerstone module and any modules built upon it.
