@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-gem rake
+gem 'rake'
 
 group :lint do
   gem 'foodcritic', '~> 3.0'
