@@ -1,11 +1,10 @@
 language: ruby
 
+bundler_args: --without kitchen --without development
+
 rvm:
-  - 2.0.0
+  - 2.1.0
 
 before_script:
   - bundle exec berks install
 
-script:
-  - bundle exec foodcritic -f any . --tags ~FC007 --tags ~FC015 --tags ~FC023
-  - bundle exec rspec --color --format progress
