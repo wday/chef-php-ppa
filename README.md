@@ -15,6 +15,13 @@ The cookbook is already pre-configured for use with the default ondrej-php PPA. 
 * chef-php-ppa["key"] - e.g. E5267A6C
 * chef-php-ppa["uri"] - e.g. http://ppa.launchpad.net/ondrej/php5/ubuntu
 
+## Integration testing
+This project uses Test Kitchen to provide integration testing and Rake as a build utility. By default when you run rake
+it will only check for style and lint issues. if you run `rake integration` it will perform the style and lint tasks and
+if those pass it will then run kitchen test.
+
+Currently there is no cloud based integration testing with Travis CI, but it is on the road map to solve that problem.
+
 ## Contributing
 * [Getting Started](doc/CONTRIBUTING.md)
 * [Bug Reports](doc/CONTRIBUTING.md#bug-reports)
