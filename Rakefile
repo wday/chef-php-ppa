@@ -16,17 +16,9 @@ namespace :style do
   end
 end
 
-desc 'Style Cop!'
-task style: ['style:chef', 'style:ruby']
-
 # Integration tests w/ Kitchen
 namespace :integration do
-  desc 'No Integration Tests'
-  task :none do
 
-  end
-
-  desc 'Run Test Kitchen with Vagrant'
   task :vagrant do
     Kitchen.logger = Kitchen.default_file_logger
     Kitchen::Config.new.instances.each do |instance|
@@ -35,8 +27,11 @@ namespace :integration do
   end
 end
 
-desc 'Run all tests on Travis'
-task default: ['style', 'integration:none']
+desc 'Default, lint and style tasks only'
+task default: ['style']
 
-# Default
-task kitchen: ['style', 'integration:vagrant']
+desc 'Lint and Style Cop!'
+task style: ['style:chef', 'style:ruby']
+
+desc 'Integration tests using Vagrant and Test Kitchen'
+task integration: ['style', 'integration:vagrant']
