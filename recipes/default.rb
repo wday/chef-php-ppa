@@ -3,19 +3,19 @@
 # Recipe:: default
 #
 
-include_recipe "apt"
+include_recipe 'apt'
 
-execute "apt-get update" do
+execute 'apt-get update' do
   action :nothing
-  command "apt-get update"
+  command 'apt-get update'
 end
 
-apt_repository "#{node["chef-php-ppa"]["repository"]}-#{node["lsb"]["codename"]}" do
-  uri node["chef-php-ppa"]["uri"]
-  distribution node["lsb"]["codename"]
-  components ["main"]
-  keyserver node["chef-php-ppa"]["keyserver"]
-  key node["chef-php-ppa"]["key"]
+apt_repository "#{node['chef-php-ppa']['repository']}-#{node['lsb']['codename']}" do
+  uri node['chef-php-ppa']['uri']
+  distribution node['lsb']['codename']
+  components ['main']
+  keyserver node['chef-php-ppa']['keyserver']
+  key node['chef-php-ppa']['key']
   action :add
-  notifies :run, "execute[apt-get update]", :immediately
+  notifies :run, 'execute[apt-get update]', :immediately
 end
