@@ -1,6 +1,6 @@
 language: ruby
 
-bundler_args: --without kitchen_vagrant --without development
+bundler_args: --without kitchen --without development
 
 rvm:
   - 2.1.0
@@ -8,11 +8,3 @@ rvm:
 before_script:
   - bundle exec berks install
 
-script:
-  - bundle exec kitchen test $KITCHEN_INSTANCE
-
-after_script:
-  - bundle exec kitchen destroy $KITCHEN_INSTANCE
-
-matrix:
-  - KITCHEN_INSTANCE='default-ubuntu-1204'
