@@ -12,7 +12,14 @@ group :unit do
   gem 'chefspec',   '~> 3.3'
 end
 
-group :kitchen do
+group :kitchen_common do
   gem 'test-kitchen', '~> 1.2'
+end
+
+group :kitchen_vagrant do
   gem 'kitchen-vagrant', '~> 0.14'
+end
+
+group :kitchen_cloud do
+  gem 'kitchen-ec2'
 end
