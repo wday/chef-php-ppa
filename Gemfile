@@ -3,22 +3,21 @@ source 'https://rubygems.org'
 gem 'rake'
 
 group :lint do
-  gem 'foodcritic'
-  gem 'rubocop'
-  gem 'travis-lint'
+  gem 'foodcritic', '~> 3.0'
+  gem 'rubocop',    '~> 0.18'
 end
 
 group :unit do
   gem 'berkshelf',  '~> 2.0'
-  gem 'chefspec'
+  gem 'chefspec',   '~> 3.3'
 end
 
 group :kitchen_common do
-  gem 'test-kitchen'
+  gem 'test-kitchen', '~> 1.2'
 end
 
 group :kitchen_vagrant do
-  gem 'kitchen-vagrant'
+  gem 'kitchen-vagrant', '~> 0.14'
 end
 
 group :kitchen_cloud do
