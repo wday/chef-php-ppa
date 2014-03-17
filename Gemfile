@@ -21,6 +21,6 @@ group :kitchen_vagrant do
 end
 
 group :kitchen_cloud do
-  gem 'vagrant',   '~> 1.5'
+  gem 'vagrant',   '~> 1.0'
   gem 'kitchen-ec2'
 end
