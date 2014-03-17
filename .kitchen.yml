@@ -6,7 +6,7 @@ provisioner:
   name: chef_solo
 
 platforms:
-  - name: ubuntu-1204
+  - name: ubuntu-12.04
     run_list: apt::default
 
 suites:
