@@ -7,7 +7,7 @@ before_install:
 - cat ~/.ssh/Travis-Continuous-Integration.pem.base64 | tr -d ' ' | base64 --decode >
   ~/.ssh/Travis-CI.pem
 script:
-- bundle exec rake
+- bundle exec rake travis
 - bundle exec kitchen test default-ubuntu-1204
 after_script:
 - bundle exec kitchen destroy
