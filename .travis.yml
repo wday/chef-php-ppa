@@ -8,9 +8,6 @@ before_install:
   > ~/.ssh/Travis-CI.pem
 script:
 - bundle exec rake travis
-- bundle exec kitchen test default-ubuntu-1204
-after_script:
-- bundle exec kitchen destroy
 env:
   global:
   - secure: aRElm5mzNno2WIGyi3bwa7aUu6fbtrC512lL8XPqjjUvJpu4EyzgoffHrqvV3ZzRN8993zMWEcbBKUVHXj391kSGxkK9Szz/aAd61rrr3gPES1FuK7mYpZh2z9GxsBa/mXKIIhKkl5SU0rdT8VWooDJWWzZGsqd+cfI7+nAIscY=
