@@ -21,5 +21,6 @@ group :kitchen_vagrant do
 end
 
 group :kitchen_cloud do
+  gem 'unf'
   gem 'kitchen-ec2'
 end
