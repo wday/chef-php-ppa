@@ -4,7 +4,7 @@ rvm:
 - 2.1.0
 before_install:
 - echo -n $EC2_KEY_CHUNK_{0..30} >> ~/.ssh/Travis-CI.pem_base64
-- cat ~/.ssh/Travis-Continuous-Integration.pem.base64 | tr -d ' ' | base64 --decode
+- cat ~/.ssh/Travis-CI.pem_base64 | tr -d ' ' | base64 --decode
   > ~/.ssh/Travis-CI.pem
 script:
 - bundle exec rake travis
