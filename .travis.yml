@@ -4,8 +4,7 @@ rvm:
 - 2.1.0
 before_install:
 - echo -n $EC2_KEY_CHUNK_{0..30} >> ~/.ssh/Travis-CI.pem_base64
-- cat ~/.ssh/Travis-CI.pem_base64 | tr -d ' ' | base64 --decode
-  > ~/.ssh/Travis-CI.pem
+- cat ~/.ssh/Travis-CI.pem_base64 | tr -d ' ' | base64 --decode > ~/.ssh/Travis-CI.pem
 script:
 - bundle exec rake travis
 env:
@@ -50,4 +49,4 @@ env:
   - secure: Bs6zj44z8RZDTIeIbnN4gtqYoWbwXb0kTWJkzTs7fK1P8zgC3FLlUdta/nnqkSUiHjQkFTD2g4eFigiwGB1qC+dWCfsBxVGvTzyKn2BpAwHJoaCtd2puXQiYnDkZqA27BeFgA1WY4s+lfrel6z5QOI6GvrZ+wI/BkyvhceQ0rag=
   - secure: QzfP79B+5CHbfucco1nrZdHu3x8bQXLb36W10mXyxKBw/ySId5l2T7pc3YmJUg2N0lCDfR2N8vdQ7rc7Xw9lTtzll/PkdXrwgBCDoRD72spgMiIPHBxBU610LdXYGqDhR9QYDzILFmQmpmzFMzNYGUW3vpaaLmxE3QFi9DW/3zc=
   - secure: HbU/2cRQNGbEpZ8JvcFDYa2hb4J67VyA3eGphKXM//CQ0XXB9sKeWb8pH07ZOQQZe6rq2wlQLkHsL2V/kq/VsosL1JP3bIyMxVm1dyUBngna+dqplpYtH8I5JAOCFrnIvM2+MKrj+KWXDC0as/A5bXrGyg+30wN15eGMTuOittM=
-  - secure: AdHDutSwJ22i9g7GsuLica1TcrwOKEmM9fDH9L5mHHbXX57daqoRVHiJxGKZSD4se6rLklQ7NIAQZCWQMb69NtUxk6x7yiqz6Tm+bOAyFlW1vNKLbn/XpySv5mKqOByCUKm3igg+A/igMc/1WhYZp/k6mdX2zxUHvv7lr6wrkaM=
+  - secure: J5nPS+aJG371/Rh4cb9wdGH6L49dBInrQ5U4XnEM/O+RS07F+n5QpxnF2cWM+oZCy+2517MWmk9ieIMSrVwKc4nR6UEc+wGTOAdwYdfpZ/j4fND6rTM0vUNs4g8abIk7xQj5IA02NWk4juVNTHMl0he8FWUWAayV5IWAy//hUeE=
