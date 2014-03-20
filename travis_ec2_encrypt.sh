@@ -56,4 +56,4 @@ travis encrypt EC2_SSH_KEY_PATH=$EC2_SSH_KEY_PATH --add
 # echo "    - secure: $(travis encrypt AWS_SECRET_ACCESS_KEY=$AWS_SECRET_ACCESS_KEY\")";
 # echo "    - secure: $(travis encrypt AWS_KEYPAIR_NAME=$AWS_KEYPAIR_NAME\")";
 # echo "    - secure: $(travis encrypt AWS_USERNAME=$AWS_USERNAME\")";
-# echo "    - secure: $(travis encrypt EC2_SSH_KEY_PATH=$EC2_SSH_KEY_PATH)";
+# echo "    - secure: $(travis encrypt EC2_SSH_KEY_PATH=/home/travis/.ssh/Travis-CI.pem)";

@@ -15,7 +15,7 @@ platforms:
   driver_config:
     image_id: ami-59a4a230
     username: <%= ENV['AWS_USERNAME'] %>
-    ssh_key: /home/travis/.ssh/<%= ENV['EC2_SSH_KEY_PATH'] %>
+    ssh_key: <%= ENV['EC2_SSH_KEY_PATH'] %>
   run_list:
   - recipe[apt]
 
