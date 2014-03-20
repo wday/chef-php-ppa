@@ -2,6 +2,8 @@ language: ruby
 bundler_args: --without kitchen_vagrant --without development
 rvm:
 - 2.1.0
+notifications:
+  hipchat: $HIPCHAT_API_TOKEN@$HIPCHAT_ROOM
 before_install:
 - echo -n $EC2_KEY_CHUNK_{0..30} >> ~/.ssh/Travis-CI.pem_base64
 - cat ~/.ssh/Travis-CI.pem_base64 | tr -d ' ' | base64 --decode > ~/.ssh/Travis-CI.pem
@@ -9,6 +11,9 @@ script:
 - bundle exec rake travis
 env:
   global:
+  - secure: "dGRjJ59niMiCM0zLRf1szrR878hCxnjvUCqlrqbRGHTpqemWq3Wc78mzK/EwbZWc62OXekv7Ar85s8X331RIa5CTWd9dcumWV2DXjvIHv6jHx4/cT9TRYnuHZ5MPghVMZLevQ/ULiCHBVIQJI/JlqB2VQxXdkxzwZkNQt0jifmw="
+  - secure: "Df17O2mIweFNqA4NppkXGwg3eLlZIW/O7kvHob/B+pDtXdsJk722yI+qzf8tRZEa4YISs7EB2DG2CKLNW1p33Nd2qBP69lLoPar8C/DC+wovWgFM3qiF9zdEpkRDhBzprC7SYxNvmhrGrQ6zdxLgI2tVKzH0CgNLiYtENzmYchs="
+
   - secure: TxQ3sxj7M62nU4aTAspKc9CAA3Kx8iKDHViaW6WsHccbMVfI9elD+CSuQ4S6y9WSGlqtj687WX09EmPCLkA3WV9i8usWPrYgFuPMU0fN8dTse+Cz42bMWEvNWHsCACGpN/PfBfiJI8OT2eInnOlkQhQ4Rfe+SzHFpJJx6lKa3ww=
   - secure: E7JtJ6kP435fnuWFlaTRHppO7guEZhJXtugKHx0SsrPinDu3rpVdEPSG6yvZ3Hso8Ti9HjmizXDbCNcA76E8KvVr3Ilg4Wpgk/KUt1P+PwB4s/s6zIYnHwGDSrZzOLOhxFpu8dPqkmKf4OJ5+JTq051NneCJcl3YigeK1zvJePI=
   - secure: cs4Z11LiSpoZax0iStYIcXSImJmv/h4CmGEjodsTN40ZdLZYMTj4lTswvyjffNqYDJ+bDlL+Ay6BDoEGd7snJyW7yCDoq2jkSwICj8zU3tIhZRI5O1LFUg6/7lIgAjyr6RQbhCdXqdlUCUnNMLmGUzVcBoRPW6uRZk220FEYdas=
