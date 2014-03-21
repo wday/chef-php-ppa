@@ -5,6 +5,7 @@ gem 'rake'
 group :lint do
   gem 'foodcritic', '~> 3.0'
   gem 'rubocop',    '~> 0.18'
+  gem 'travis-lint'
 end
 
 group :unit do
@@ -13,7 +14,7 @@ group :unit do
 end
 
 group :kitchen_common do
-  gem 'test-kitchen', '~> 1.2'
+  gem 'test-kitchen'
 end
 
 group :kitchen_vagrant do
@@ -21,5 +22,6 @@ group :kitchen_vagrant do
 end
 
 group :kitchen_cloud do
+  gem 'unf'
   gem 'kitchen-ec2'
 end
