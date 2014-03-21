@@ -48,12 +48,7 @@ end
 
 desc 'Output environment variables'
 puts '--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--'
-puts "AWS_ACCESS_KEY_ID" + ENV['AWS_ACCESS_KEY_ID']
-puts "AWS_SECRET_ACCESS_KEY" + ENV['AWS_SECRET_ACCESS_KEY']
-puts "AWS_KEYPAIR_NAME" + ENV['AWS_KEYPAIR_NAME']
-puts "AWS_USERNAME" + ENV['AWS_USERNAME']
 puts "EC2_SSH_KEY_PATH" + ENV['EC2_SSH_KEY_PATH']
-puts "HIPCHAT_API_TOKEN" + ENV['HIPCHAT_API_TOKEN']
 puts "HIPCHAT_ROOM" + ENV['HIPCHAT_ROOM']
 puts '--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--'
 
