@@ -7,15 +7,6 @@ notifications:
 before_install:
 - echo -n $EC2_KEY_CHUNK_{0..30} >> ~/.ssh/Travis-CI.pem_base64
 - cat ~/.ssh/Travis-CI.pem_base64 | tr -d ' ' | base64 --decode > ~/.ssh/Travis-CI.pem
-- echo --==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==
-- echo $AWS_ACCESS_KEY_ID
-- echo $AWS_SECRET_ACCESS_KEY
-- echo $AWS_KEYPAIR_NAME
-- echo $AWS_USERNAME
-- echo $EC2_SSH_KEY_PATH
-- echo $HIPCHAT_API_TOKEN
-- echo $HIPCHAT_ROOM
-- echo --==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==
 
 script:
 - bundle exec rake default
