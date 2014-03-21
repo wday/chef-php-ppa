@@ -46,12 +46,6 @@ namespace :integration do
   end
 end
 
-desc 'Output environment variables'
-puts '--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--'
-puts "EC2_SSH_KEY_PATH" + ENV['EC2_SSH_KEY_PATH']
-puts "HIPCHAT_ROOM" + ENV['HIPCHAT_ROOM']
-puts '--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--'
-
 desc 'Default, lint and style tasks only'
 task default: ['style']
 

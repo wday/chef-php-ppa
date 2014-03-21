@@ -52,10 +52,4 @@ travis encrypt AWS_KEYPAIR_NAME=$AWS_KEYPAIR_NAME --add
 travis encrypt AWS_USERNAME=$AWS_USERNAME --add
 travis encrypt EC2_SSH_KEY_PATH=$EC2_SSH_KEY_PATH --add
 travis encrypt HIPCHAT_API_TOKEN=$HIPCHAT_API_TOKEN --add
-travis encrypt HIPCHAT_ROOM="$(printf '%q' $HIPCHAT_ROOM)" --add
-
-# echo "    - secure: $(travis encrypt AWS_ACCESS_KEY_ID=$AWS_ACCESS_KEY_ID\")";
-# echo "    - secure: $(travis encrypt AWS_SECRET_ACCESS_KEY=$AWS_SECRET_ACCESS_KEY\")";
-# echo "    - secure: $(travis encrypt AWS_KEYPAIR_NAME=$AWS_KEYPAIR_NAME\")";
-# echo "    - secure: $(travis encrypt AWS_USERNAME=$AWS_USERNAME\")";
-# echo "    - secure: $(travis encrypt EC2_SSH_KEY_PATH=/home/travis/.ssh/Travis-CI.pem)";
+travis encrypt HIPCHAT_ROOM=$HIPCHAT_ROOM --add
