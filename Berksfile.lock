@@ -1,0 +1,10 @@
+{
+  "sources": {
+    "chef-php-ppa": {
+      "path": "."
+    },
+    "apt": {
+      "locked_version": "2.3.8"
+    }
+  }
+}
