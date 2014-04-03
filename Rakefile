@@ -49,7 +49,10 @@ end
 desc 'Default, lint and style tasks only'
 task default: ['style']
 
-desc 'Travis testing using ec2'
+desc 'Integration testing using ec2 cloud'
+task cloud: ['style', 'integration:cloud']
+
+desc 'Travis CI Commands using ec2 cloud'
 task travis: ['style', 'integration:cloud']
 
 desc 'Lint and Style Cop!'
