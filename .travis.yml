@@ -6,7 +6,7 @@ before_install:
 - echo -n $EC2_KEY_CHUNK_{0..40} >> ~/.ssh/Travis-CI.pem_base64
 - cat ~/.ssh/Travis-CI.pem_base64 | tr -d ' ' | base64 --decode > ~/.ssh/Travis-CI.pem
 script:
-- bundle exec rake integration:cloud
+- bundle exec rake travis
 env:
   global:
   - secure: LVJiHfBM0DtYP/mocOlPIh1l/IR6+bL5H2vyWHluAJed/f1eq6uIwVTqOxZ2c7kTbRrcV7Xnrq0AL0ZsfMOH/fbdm3uA/QEuJe/+8nNPdf+XoLEq1oww9B8q5TK+7wNtj4SiByo3QvQTwOx1y03Fk0aHMjgrajXtZ98f5RIyhio=

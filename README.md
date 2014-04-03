@@ -15,20 +15,44 @@ The cookbook is already pre-configured for use with the default ondrej-php PPA. 
 * chef-php-ppa["key"] - e.g. E5267A6C
 * chef-php-ppa["uri"] - e.g. http://ppa.launchpad.net/ondrej/php5/ubuntu
 
-## Development Gems
-In order to develop and test this module, you will need a handful of gems installed. Bare minimum, you will need Bundler,
-Rake and Travis installed. These can be installed using `gem install bundler`, `gem install rake`, `gem install travis`.
-
-You should also install travis-lint and run that before checking in as well.
+## Development Requirements
+In order to develop and test this module, you will need a handful of gems installed.
+* Rake - `gem install rake`
+* Bundler - `gem install bundler`
+* Travis - `gem install travis`
+* Travis Lint - `gem install travis-lint`
+* Berkshelf - `gem install berkshelf`
+* test-kitchen - `gem install test-kitchen`
+* foodcritic - `gem install foodcritic`
 
 You will also need Vagrant 1.5.* installed.
 
 ## Integration testing
 This project uses Test Kitchen to provide integration testing and Rake as a build utility. By default when you run rake
 it will only check for style and lint issues. if you run `rake integration` it will perform the style and lint tasks and
-if those pass it will then run kitchen test.
+if those pass it will then run kitchen test. The default integration tests will run against a local Vagrant Virtual Box.
+If you wish to only run the tests against vagrant, you can run `rake integration:vagrant` or `rake integration:cloud` to
+test against the ec2 cloud VM.
 
-Currently there is no cloud based integration testing with Travis CI, but it is on the road map to solve that problem.
+Travis CI will use the `rake travis` command to test style, lint and then integration:cloud.
+
+Note, if you wish to fork this project or test any changes to this project using EC2, you will need to update environment
+variables on your system so that test-kitchen can connect to EC2. You will also need to make sure you have your EC2 SSH
+key available for your CLI commands to use.
+
+You should have the following environment variables set:
+* 'AWS_ACCESS_KEY_ID' - The AWS Access Key ID provided when you set up IAM
+* 'AWS_SECRET_ACCESS_KEY' - The AWS Secret Access Key provided when you set up IAM
+* 'AWS_USERNAME' - This should likely be 'ubuntu' if you're using a standard ubuntu AMI.
+* 'EC2_SSH_KEY_PATH' - This should be the name of your key file, it is expected to live in ~/.ssh/
+
+## Travis CI
+This project uses Travis CI for build and CI.
+
+The same environment variables above are already encrypted in the travis.yml file for the project using the
+travis_ec2_encrypt shell script. The values in source control are for accessing the project owner's EC2 account. This
+allows the Travis CI system to remotely spin up an EC2 instance and deploy the cookbook. If you wish to fork this repo,
+then you will need to regenerate the encrypted values using the enclosed travis_ec2_encrypt script.
 
 ## Contributing
 * [Getting Started](doc/CONTRIBUTING.md)
