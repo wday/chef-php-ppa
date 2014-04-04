@@ -6,8 +6,7 @@
 include_recipe 'apt'
 
 execute 'apt-get update' do
-  action :nothing
-  command 'apt-get update'
+  command 'apt-get -y update'
 end
 
 apt_repository "#{node['chef-php-ppa']['repository']}-#{node['lsb']['codename']}" do
